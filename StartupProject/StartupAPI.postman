@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "211574bf-bb6e-496f-9038-b4d9594bca4e",
+		"name": "StartupAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50866616",
+		"_collection_link": "https://aninhaemeuri652-1386038.postman.co/workspace/Ana-Clara's-Workspace~ffebb839-5e45-4ddb-8f4f-0fb17e7be22f/collection/50866616-211574bf-bb6e-496f-9038-b4d9594bca4e?action=share&source=collection_link&creator=50866616"
+	},
+	"item": [
+		{
+			"name": "Quiz",
+			"item": [
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/Quiz",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"Quiz"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/Quiz/2ca03257-99eb-410e-b0ef-60ec1a4282f4",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"Quiz",
+								"2ca03257-99eb-410e-b0ef-60ec1a4282f4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Matemática Básica\",\r\n  \"description\": \"Questões de operações e raciocínio lógico\",\r\n  \"inAtivo\": false,\r\n  \"createdAt\": \"2025-12-16T14:30:00Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/Quiz",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"Quiz"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"2ca03257-99eb-410e-b0ef-60ec1a4282f4\",\r\n  \"title\": \"Matemática Avançada\",\r\n  \"description\": \"Questões de operações e raciocínio lógico\",\r\n  \"inAtivo\": true,\r\n  \"createdAt\": \"2025-12-16T14:30:00Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/quiz/2ca03257-99eb-410e-b0ef-60ec1a4282f4",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"quiz",
+								"2ca03257-99eb-410e-b0ef-60ec1a4282f4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/quiz/2ca03257-99eb-410e-b0ef-60ec1a4282f4",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"quiz",
+								"2ca03257-99eb-410e-b0ef-60ec1a4282f4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patch",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"description\": \"Questões de raciocínio lógico\",\r\n  \"inAtivo\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/Quiz/d953f3d4-1be6-413b-a4a7-03d7ada5c3b2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"Quiz",
+								"d953f3d4-1be6-413b-a4a7-03d7ada5c3b2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
