@@ -14,16 +14,22 @@ namespace StartupProject.Repository
             _context = context;
         }
 
+
         public async Task<List<Quiz>> FindAllAsync()
         {
             return await _context.Quiz
                                  .AsNoTracking()
+                                 .Include(q => q._Perguntas)
+                                     .ThenInclude(qn => qn.alternatives)
                                  .ToListAsync();
         }
 
         public async Task<Quiz?> GetByIdAsync(Guid id)
         {
             return await _context.Quiz
+                                 .AsNoTracking()
+                                 .Include(q => q._Perguntas)
+                                     .ThenInclude(qn => qn.alternatives)
                                  .FirstOrDefaultAsync(q => q.Id == id);
         }
 

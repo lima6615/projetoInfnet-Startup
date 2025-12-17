@@ -34,14 +34,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/api/Quiz/2ca03257-99eb-410e-b0ef-60ec1a4282f4",
+							"raw": "{{host}}/api/Quiz/4ac83913-c744-42b1-b0e8-7219acb35a4f",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"api",
 								"Quiz",
-								"2ca03257-99eb-410e-b0ef-60ec1a4282f4"
+								"4ac83913-c744-42b1-b0e8-7219acb35a4f"
 							]
 						}
 					},
@@ -54,7 +54,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"title\": \"Matemática Básica\",\r\n  \"description\": \"Questões de operações e raciocínio lógico\",\r\n  \"inAtivo\": false,\r\n  \"createdAt\": \"2025-12-16T14:30:00Z\"\r\n}",
+							"raw": "{\r\n  \"title\": \"Quiz de C# Básico\",\r\n  \"Description\": \"Teste de conhecimentos básicos de C# e .NET\",\r\n  \"InAtivo\": false,\r\n  \"CreatedAt\": \"2025-12-17T12:00:00Z\",\r\n  \"Questions\": [\r\n    {\r\n      \"Name\": \"Qual palavra-chave define uma classe em C#?\",\r\n      \"Type\": \"single-choice\",\r\n      \"Alternatives\": [\r\n        { \"Text\": \"class\" },\r\n        { \"Text\": \"struct\" },\r\n        { \"Text\": \"interface\" },\r\n        { \"Text\": \"using\" }\r\n      ]\r\n    },\r\n    {\r\n      \"Name\": \"Quais operadores representam coalescência nula e atribuição com coalescência?\",\r\n      \"Type\": \"multiple-choice\",\r\n      \"Alternatives\": [\r\n        { \"Text\": \"??\" },\r\n        { \"Text\": \"?. \" },\r\n        { \"Text\": \"=>\" },\r\n        { \"Text\": \"??=\" }\r\n      ]\r\n    }\r\n  ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -108,14 +108,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/api/quiz/2ca03257-99eb-410e-b0ef-60ec1a4282f4",
+							"raw": "{{host}}/api/quiz/d953f3d4-1be6-413b-a4a7-03d7ada5c3b2",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"api",
 								"quiz",
-								"2ca03257-99eb-410e-b0ef-60ec1a4282f4"
+								"d953f3d4-1be6-413b-a4a7-03d7ada5c3b2"
 							]
 						}
 					},
@@ -128,7 +128,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"description\": \"Questões de raciocínio lógico\",\r\n  \"inAtivo\": true\r\n}",
+							"raw": "{\r\n  \"description\": \"Questões de História\",\r\n  \"inAtivo\": true\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

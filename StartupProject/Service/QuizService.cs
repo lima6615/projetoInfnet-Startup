@@ -8,6 +8,7 @@ using StartupProject.Dtos;
 using StartupProject.Service.Interface;
 using StartupProject.Repository;
 using StartupProject.Repository.Interfaces;
+using StartupProject.Dtos.StartupProject.Dtos;
 
 namespace StartupProject.Service
 {
@@ -42,6 +43,34 @@ namespace StartupProject.Service
                 InAtivo = dto.InAtivo,
                 CreatedAt = dto.CreatedAt == default ? DateTime.UtcNow : dto.CreatedAt
             };
+
+            if (dto.Questions is not null)
+            {
+                foreach (var qDto in dto.Questions)
+                {
+                    var question = new Question
+                    {
+                        Name = qDto.Name ?? string.Empty,
+                        Type = qDto.Type ?? string.Empty,
+                        quiz = entity
+                    };
+
+                    if (qDto.Alternatives is not null)
+                    {
+                        foreach (var aDto in qDto.Alternatives)
+                        {
+                            var alt = new Alternative
+                            {
+                                Text = aDto.Text ?? string.Empty,
+                                question = question
+                            };
+                            question.alternatives.Add(alt);
+                        }
+                    }
+
+                    entity._Perguntas.Add(question);
+                }
+            }
 
             var created = await _repository.CreateAsync(entity);
             return MapToDto(created);
@@ -99,7 +128,18 @@ namespace StartupProject.Service
                 title = q.title,
                 Description = q.Description,
                 InAtivo = q.InAtivo,
-                CreatedAt = q.CreatedAt
+                CreatedAt = q.CreatedAt,
+                Questions = q._Perguntas?.Select(qn => new QuestionDTO
+                {
+                    Id = qn.Id,
+                    Name = qn.Name,
+                    Type = qn.Type,
+                    Alternatives = qn.alternatives?.Select(a => new AlternativeDTO
+                    {
+                        Id = a.Id,
+                        Text = a.Text
+                    }).ToList() ?? new List<AlternativeDTO>()
+                }).ToList() ?? new List<QuestionDTO>()
             };
     }
 }

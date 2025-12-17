@@ -1,4 +1,6 @@
-﻿namespace StartupProject.Dtos
+﻿using StartupProject.Dtos.StartupProject.Dtos;
+
+namespace StartupProject.Dtos
 {
     public class QuizDTO
     {
@@ -7,5 +9,6 @@
         public string Description { get; set; } = string.Empty;
         public bool InAtivo { get; set; }
         public DateTime CreatedAt { get; set; }
+        public List<QuestionDTO>? Questions { get; set; }
     }
 }
